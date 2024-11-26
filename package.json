@@ -1,0 +1,17 @@
+{
+  "name": "metamaid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "glob": "^11.0.0",
+    "minimist": "^1.2.8",
+    "ramda": "^0.30.1"
+  }
+}
