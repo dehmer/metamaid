@@ -10,9 +10,11 @@ import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
 import { PromisePool } from '@supercharge/promise-pool'
 import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
+import fingerprint from '../lib/chromaprint/fingerprint.js'
 
 // const ROOT = '/Volumes/audiothek'
 const ROOT = '/Users/dehmer/Public/Data/audio'
+// const ROOT = "/Users/dehmer/Public/Data/audio/Mediathek/M/Metallica/1983 - Kill 'Em All"
 const EXTENSIONS = ['aac', 'aif', 'aiff', 'flac', 'm4a', 'm4v', 'mp3', 'mpc', 'ogg', 'wav', 'wma']
 // const PATTERN = `${ROOT}/**/*.{${EXTENSIONS.join(',')}}`
 const PATTERN = `${ROOT}/**/*.mp3`
@@ -51,16 +53,18 @@ const readmeta = async filename => {
     ...await stat(filehandle),
   }
 
-  try {
-    Object.assign(context, {
-      ...await id3v1.read(filehandle, context),
-      ...await id3v2.read(filehandle, context)
-    })
-  } catch (err) {
-    console.error(err)
-  } finally {
-    await filehandle.close()
+  Object.assign(context, {
+    ...await id3v1.read(filehandle, context),
+    ...await id3v2.read(filehandle, context)
+  })
+
+  const id = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
+  const fingerprintKey = id ? `${id}/TXXX/Acoustid Fingerprint` : undefined
+  if (fingerprintKey) {
+    context[fingerprintKey] = await fingerprint(filename)
   }
+
+  await filehandle.close()
 
   return context
 }
