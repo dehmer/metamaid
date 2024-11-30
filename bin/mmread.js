@@ -5,17 +5,18 @@ import { dirname, basename, extname } from 'node:path'
 import { randomUUID } from 'node:crypto'
 import * as R from 'ramda'
 import minimist from 'minimist'
+import { ClassicLevel } from 'classic-level'
 import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
 import { PromisePool } from '@supercharge/promise-pool'
 import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
 
-const ROOT = '/Volumes/audiothek'
-// const ROOT = '/Users/dehmer/Public/Data/audio'
+// const ROOT = '/Volumes/audiothek'
+const ROOT = '/Users/dehmer/Public/Data/audio'
 const EXTENSIONS = ['aac', 'aif', 'aiff', 'flac', 'm4a', 'm4v', 'mp3', 'mpc', 'ogg', 'wav', 'wma']
 // const PATTERN = `${ROOT}/**/*.{${EXTENSIONS.join(',')}}`
 const PATTERN = `${ROOT}/**/*.mp3`
-// const PATTERN = `${ROOT}/**/02_20 - Keine Sterne in Athen.mp3`
+// const PATTERN = `${ROOT}/**/06 - Seasons to Cycle.mp3`
 
 const stat = async filehandle => {
   const { atime, mtime, ctime, size } = await filehandle.stat()
@@ -50,28 +51,59 @@ const readmeta = async filename => {
     ...await stat(filehandle),
   }
 
-  Object.assign(context, {
-    ...await id3v1.read(filehandle, context),
-    ...await id3v2.read(filehandle, context)
-  })
+  try {
+    Object.assign(context, {
+      ...await id3v1.read(filehandle, context),
+      ...await id3v2.read(filehandle, context)
+    })
+  } catch (err) {
+    console.error(err)
+  } finally {
+    await filehandle.close()
+  }
 
-  await filehandle.close()
   return context
+}
+
+const putContext = location => {
+  const db = new ClassicLevel(location)
+  const textDB = db.sublevel('text', { valueEncoding: 'json' })
+  const binaryDB = db.sublevel('binary', { valueEncoding: 'buffer' })
+
+  const put = async context => {
+    const { uuid, ...rest } = context
+    const { text, binary } = Object.entries(rest).reduce((acc, [key, value]) => {
+      if (typeof value === 'string') {
+        acc.text.push(({ type: 'put', key: `${uuid}/${key}`, value }))
+      } else if (value instanceof Buffer) {
+        acc.binary.push(({ type: 'put', key: `${uuid}/${key}`, value }))
+      }
+      return acc
+    }, { text: [], binary: [] })
+
+    await textDB.batch(text)
+    await binaryDB.batch(binary)
+  }
+
+  put.dispose = () => db.close()
+
+  return put
 }
 
 ;(async () => {
   const filenames = await glob(PATTERN, { nodir: true })
+  const put = putContext('./db')
 
-  PromisePool
+  await PromisePool
     .withConcurrency(10)
     .for(filenames)
     .process(async filename => {
       // console.log('reading', filename)
       const context = await readmeta(filename)
+      const { uuid, ...rest } = context
       console.log(context)
+      await put(context)
     })
 
-    // const info = await id3v1.read(filehandle, stat)
-    // if (Object.keys(info).length !== 0) console.log(filename, Object.keys(info).length)
-    // await filehandle.close()
+  await put.dispose()
 })()
