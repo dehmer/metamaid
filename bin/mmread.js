@@ -10,15 +10,16 @@ import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
 import { PromisePool } from '@supercharge/promise-pool'
 import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
-import fingerprint from '../lib/chromaprint/fingerprint.js'
+import fpcalc from '../lib/chromaprint/fpcalc.js'
 
 // const ROOT = '/Volumes/audiothek'
-const ROOT = '/Users/dehmer/Public/Data/audio'
+const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
+// const ROOT = '/Users/dehmer/Public/Audio/M/Metallica/1999 - S&M/Disc 1'
 // const ROOT = "/Users/dehmer/Public/Data/audio/Mediathek/M/Metallica/1983 - Kill 'Em All"
 const EXTENSIONS = ['aac', 'aif', 'aiff', 'flac', 'm4a', 'm4v', 'mp3', 'mpc', 'ogg', 'wav', 'wma']
 // const PATTERN = `${ROOT}/**/*.{${EXTENSIONS.join(',')}}`
 const PATTERN = `${ROOT}/**/*.mp3`
-// const PATTERN = `${ROOT}/**/06 - Seasons to Cycle.mp3`
+// const PATTERN = `${ROOT}/**/09 - Of Wolf And Man.mp3`
 
 const stat = async filehandle => {
   const { atime, mtime, ctime, size } = await filehandle.stat()
@@ -46,6 +47,7 @@ const writeImage = context => {
 }
 
 const readmeta = async filename => {
+  console.log('[readmeta]', filename)
   const filehandle = await open(filename, 'r')
   const context = {
     uuid: randomUUID(),
@@ -53,23 +55,31 @@ const readmeta = async filename => {
     ...await stat(filehandle),
   }
 
-  Object.assign(context, {
-    ...await id3v1.read(filehandle, context),
-    ...await id3v2.read(filehandle, context)
-  })
+  try {
+    Object.assign(context, {
+      ...await id3v1.read(filehandle, context),
+      ...await id3v2.read(filehandle, context)
+    })
 
-  const id = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
-  const fingerprintKey = id ? `${id}/TXXX/Acoustid Fingerprint` : undefined
-  if (fingerprintKey) {
-    context[fingerprintKey] = await fingerprint(filename)
+    const id = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
+    const fingerprintKey = id ? `${id}/TXXX/Acoustid Fingerprint` : undefined
+
+    if (!context[fingerprintKey]) {
+      const fingerprint = fingerprintKey ? await fpcalc(filename) : undefined
+      if (fingerprint) context[fingerprintKey] = fingerprint
+      else console.warn('empty fingerprint')
+    }
+    // console.log(context)
+  } catch (err) {
+    console.error(err)
+  } finally {
+    await filehandle.close()
   }
-
-  await filehandle.close()
 
   return context
 }
 
-const putContext = location => {
+const storemeta = location => {
   const db = new ClassicLevel(location)
   const textDB = db.sublevel('text', { valueEncoding: 'json' })
   const binaryDB = db.sublevel('binary', { valueEncoding: 'buffer' })
@@ -96,18 +106,16 @@ const putContext = location => {
 
 ;(async () => {
   const filenames = await glob(PATTERN, { nodir: true })
-  const put = putContext('./db')
+  const store = storemeta('./db')
 
   await PromisePool
     .withConcurrency(10)
     .for(filenames)
     .process(async filename => {
-      // console.log('reading', filename)
       const context = await readmeta(filename)
       const { uuid, ...rest } = context
-      console.log(context)
-      await put(context)
+      // await store(context)
     })
 
-  await put.dispose()
+  await store.dispose()
 })()
