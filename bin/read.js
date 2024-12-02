@@ -12,8 +12,8 @@ import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
 import fpcalc from '../lib/chromaprint/fpcalc.js'
 
-// const ROOT = '/Volumes/audiothek'
-const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
+const ROOT = '/Volumes/audiothek'
+// const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
 // const ROOT = '/Users/dehmer/Public/Audio/M/Metallica/1999 - S&M/Disc 1'
 // const ROOT = "/Users/dehmer/Public/Data/audio/Mediathek/M/Metallica/1983 - Kill 'Em All"
 const EXTENSIONS = ['aac', 'aif', 'aiff', 'flac', 'm4a', 'm4v', 'mp3', 'mpc', 'ogg', 'wav', 'wma']
@@ -114,7 +114,7 @@ const storemeta = location => {
     .process(async filename => {
       const context = await readmeta(filename)
       const { uuid, ...rest } = context
-      // await store(context)
+      await store(context)
     })
 
   await store.dispose()
