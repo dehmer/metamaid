@@ -1,0 +1,1495 @@
+[
+  {
+    "id": "26aa8ff2-f32b-4190-975b-90d1d645ee33",
+    "recordings": [
+      {
+        "id": "5f154d86-dbe9-4484-9ed5-01743b1459e5",
+        "releases": [
+          {
+            "id": "2393a2f5-6d5b-4be7-8e68-f8ce1c53db60",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 9,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "634dd170-bb39-4065-921a-602b0ffd790a",
+                    "position": 8,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sources": 20
+      },
+      {
+        "id": "81d89dc6-1e82-40fd-a87e-0f584b647091",
+        "releases": [
+          {
+            "id": "b2257b5e-75ef-47cb-83a5-7434c76ed244",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 7,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "cdb67ad1-bd60-3357-997a-1726895a4de8",
+                    "position": 7,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6ec28886-ba2c-4771-b33f-61bf7267027b",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 13,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "246a65e9-6844-45ed-ba73-9dc48977c378",
+                    "position": 13,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sources": 17
+      },
+      {
+        "id": "833bcfc4-8c89-49d8-be52-4eb926b48ab0",
+        "sources": 2774
+      },
+      {
+        "id": "a71670f7-e52c-4ff1-a925-d12f15e88ae6",
+        "releases": [
+          {
+            "id": "4603e99c-91a0-4b3d-bfe6-392330065deb",
+            "mediums": [
+              {
+                "position": 1,
+                "track_count": 13,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "8eacb41e-b37b-3494-b49c-a60ea687421f",
+                    "position": 13,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sources": 1
+      },
+      {
+        "id": "b95cc682-9229-41c4-b8c8-756a2011ec4f",
+        "releases": [
+          {
+            "id": "0effa4d3-918d-44fd-89a8-2f81ea61cd20",
+            "mediums": [
+              {
+                "position": 2,
+                "track_count": 8,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "51c2d2f5-efd0-345b-bd33-7f0c2915f52f",
+                    "position": 8,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sources": 2
+      },
+      {
+        "id": "d8d3f135-5e57-49a3-ab78-af9859a192bb",
+        "sources": 16
+      },
+      {
+        "id": "deff32f2-05b2-45b8-8cf1-582369e0a819",
+        "releases": [
+          {
+            "id": "9ffe7443-7b06-4afb-bdbe-aca0aa5b7f30",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "b4907123-db04-4b0b-8b99-25cbc87245db",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a89e1d92-5381-4dab-ba51-733137d0e431",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "8f04d90d-a017-30a9-b0bd-eea9a6240613",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "834a7aa9-c7f5-3571-a812-46c6d134a98d",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "8a78a7e9-0acd-3b68-8c5d-789f8eec97f2",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "93d18f98-694e-32f9-b720-77d4f9188382",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "cb6a46eb-c096-33a6-a90c-25fd7e9ef65a",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c06ed440-f25d-3127-aadb-ebe9c685b3d8",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "664baf58-f13e-3308-a829-b766d982a6d7",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "af440c5b-8d13-4d95-a23b-ebdb0f446eee",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "781b8682-6af2-4f25-9385-167c22f35226",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "61ddbe15-8a94-3476-8d2e-b83fe5b93cc7",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "31cf7673-bdea-3ac3-8d3d-b06a63829bb8",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0d099294-ec29-4d0b-821d-202a32c85a14",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "262d1d9e-e7a2-4ad2-90df-30b6559462cb",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "70d52d85-bc3d-48e6-a06b-800f022b55fe",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "f78bb64b-4ae7-41e9-8f9c-671bdd43554d",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              },
+              {
+                "format": "CD",
+                "position": 5,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "745542ff-e47a-4f8e-88fe-dbe75264a357",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "449ea23f-420a-481f-a33e-8ccccace5363",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 5,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "4575c0a6-68cc-4c0b-bf26-e4a6442a1b96",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "da87cbd8-c2ed-411a-ba8c-1a335a10010a",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "title": "Kill ’Em All",
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "dfe1342b-de23-4dc8-ac67-5fd7b243c375",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7be54725-0be8-4a21-aac8-e9f7f33c535d",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "36fb13bb-03f3-4eda-b5c4-c7740df81568",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "de867181-0543-3925-a03b-d18f78dd7ceb",
+            "mediums": [
+              {
+                "format": "SHM-CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "941f659b-b5bb-379d-988e-2beea4280208",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9c0f7398-380c-38a7-88e9-75cfaea22ab2",
+            "mediums": [
+              {
+                "format": "Cassette",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "921fbd92-a0b9-3be2-9188-08e79b03d6a4",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ea62e2ca-3e31-4092-86dc-0d2f39e8a715",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "a8b009d4-1cf7-325b-aab1-1c8adf2bb86c",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c7057bda-bf92-417b-9766-dc01ed9679a4",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 2,
+                "track_count": 4,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "51623c10-676e-4e6b-9c31-4e127df49bb0",
+                    "position": 4,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "67d8f808-608a-3c65-9a8a-a44f4c8d986a",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "30c34679-c066-34cc-8217-678df3f7e218",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "404ed8a5-4a23-4cbf-80ef-81250c11c90e",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "f440d1fd-18f3-4d14-91c3-85536e5c907b",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e3a12638-4922-4add-888f-c2ab63197f13",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "4fb0c712-32cf-4e37-ab9b-d21e78a32fcd",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1b04ca59-174f-495c-a1ae-67e0182ae8c7",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "52c670c2-2f1e-4947-a99e-e742f7033e58",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "029c0627-01b8-4203-8dd4-e721e3af425a",
+            "mediums": [
+              {
+                "format": "SHM-CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "32656d0e-d7e9-4861-942e-f905ba857e98",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7d61605b-c8a7-47c3-a57e-09834160fdb2",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "8d600f78-a0d6-41e7-9b43-55e85f45056a",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "8685b7c4-205d-44ab-8c96-f369f7ef0bfb",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "31fd3aea-f507-4851-aa05-0552ed805b34",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f8639766-33ed-4f4a-a36a-8f5d3cfc85da",
+            "mediums": [
+              {
+                "format": "SHM-CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "fa0aa823-dea9-48a4-88e3-3a936f6f2b7f",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0ed0d790-1eba-3473-9fe0-a064920693da",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "aef37e20-8d73-3229-adaf-2c1b1da6bf55",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b74f7377-499d-34cc-9e79-9a8ed894bb48",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "b3a36552-2927-3119-a00f-1389a74cfbfa",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c0e8c048-3b30-4c2a-8b2d-2b6c7f404739",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "dbd63d46-38a8-4e28-86de-b37acba77643",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e56faa28-f048-4840-9589-e43bb5f28736",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "3a8f9a36-fd18-4821-870d-129d0503c8df",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15f5c2cb-41ea-3630-a0f6-2f86785cf608",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "5f75258b-5f7a-3fe2-ba51-150ff5273e1e",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6f0e92eb-ed84-4ed0-a176-9ed4fd84d4f5",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "ad93162f-1a8f-4e10-b045-23f9c088a774",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "87e318c3-6d69-4629-8312-e3e03af4495f",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "3053027f-1664-4401-9359-d054ce3dbcee",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "53aebdb8-e494-3d12-a1a6-4ec3038b304f",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "20846d8f-9609-3d5c-b559-1808a3e307b4",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "973db210-6451-4cd4-aecb-940c836c29ea",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "f22c19f7-6e78-4655-874a-489d1bb17561",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a8d74abb-99d8-469c-8ada-2d733cd513ed",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "8a122ddc-6aa1-3808-9182-d7125559eaef",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fceb4a46-1110-449e-8188-91bb54b2a920",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "b3dd581b-c6b7-46a3-905d-63f324c92c3b",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "654642a6-b593-4462-8fce-6e981f1b549b",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "ba154bd4-0e33-47e5-8db7-a7fa99a52f6e",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "8bdd58f5-eddd-463b-a8f0-013454293008",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "9a31a028-5a2a-4ca3-8c1c-384cf7aa9800",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bfcfc13b-440f-4eb1-9d83-d7c99acd4175",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "3654ec06-fa97-4563-a7be-349ad0e834fb",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "58e51f11-84bc-418d-82af-14ea2fe7a4c7",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "7d43958a-80b1-4fa9-b7bb-51433f21c99b",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b5a845bd-b466-4a46-8de5-9ebbdad056c1",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "48165ae2-6beb-4a88-92b5-d8695e7e98f8",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4fb1be7d-8606-4623-81a6-6b5cc81c7782",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "メタリカ"
+                      }
+                    ],
+                    "id": "17c288bb-d531-4643-80f7-32d525f1a868",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "737712b9-6ba6-4059-9c0c-ab916a63ba44",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "d37e7216-efb1-36e4-af0b-a39dc7076fa7",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f1685aa3-3e20-3f40-b0b6-b435afe9e9d6",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "6cad0ec8-3e67-36a9-9419-a414e5f086f4",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "70473d55-7868-498c-a3fb-21d84d8e9c05",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 12,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "cc968ac9-af57-4d57-8248-bdfa71a3c08b",
+                    "position": 11,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d2b4a354-7b21-38b7-bf89-0eb74cc713f8",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "2d293206-e337-3363-88a2-94d741a4eead",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f65a601a-2559-419e-92b4-f7a317af45d9",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 2,
+                "track_count": 4,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "99ae6d48-3ffe-489d-88f0-51dfa7330b06",
+                    "position": 4,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "82be42d3-37e4-4519-8768-f9993097a24c",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "1c34f690-6a1b-488a-92ce-1a21d8d0240a",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dc3428d7-d2ad-42ff-a76e-4ef1b5f9959c",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "3bb27297-169e-44b5-87f4-5bb57d65be73",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c87c604e-6045-429c-9606-f3185a509d66",
+            "mediums": [
+              {
+                "format": "Vinyl",
+                "position": 2,
+                "track_count": 4,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "915172e4-de7d-31ce-8cb7-cc2f8dfb462e",
+                    "position": 4,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "abcc9a0c-169f-4c60-8322-4b3922fd3a5e",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "4778208a-f8ff-3076-a02f-cee8b9efd3d3",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d14f5b71-1fb7-46ad-9ff6-aaafaeac0353",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "title": "Kill ’Em All (remastered)",
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "12a7d942-cd6c-4b66-8403-539c53f6aafa",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4e1a14a8-5560-3254-bdfd-bf1fdbd9fd5b",
+            "mediums": [
+              {
+                "format": "Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "f56afd57-d3cc-3ce8-8def-7b5b8471b052",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d2891587-1be3-3b43-b80e-d6afd960ad08",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "2b334d18-b74b-39ca-826b-bd69988981eb",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "faa40613-c47f-3d47-99c2-f203edc3e56e",
+            "mediums": [
+              {
+                "format": "CD",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "0f5064e4-81c1-33ca-a74b-d69c0532d962",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "696c8ca4-e719-3817-8849-89412a8f7bb4",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "0a099c27-fd4b-380a-9fe3-0e634dc3f28c",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d68f2e94-40ad-3a89-bed7-a19ac6dd83e4",
+            "mediums": [
+              {
+                "format": "12\" Vinyl",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "afcde3fa-de90-3d14-8893-233754742d9f",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "be01aa03-10d4-4df4-986c-f0fdd7c67659",
+            "mediums": [
+              {
+                "format": "Digital Media",
+                "position": 1,
+                "track_count": 10,
+                "tracks": [
+                  {
+                    "artists": [
+                      {
+                        "id": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+                        "name": "Metallica"
+                      }
+                    ],
+                    "id": "9a6dfb9d-4ff2-4856-8b75-d2696d91dcf5",
+                    "position": 10,
+                    "title": "Metal Militia"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "sources": 54
+      }
+    ],
+    "score": 0.966904
+  }
+]

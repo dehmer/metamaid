@@ -12,14 +12,15 @@ import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
 import fpcalc from '../lib/chromaprint/fpcalc.js'
 
-const ROOT = '/Volumes/audiothek'
-// const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
+// const ROOT = '/Volumes/audiothek'
+const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
 // const ROOT = '/Users/dehmer/Public/Audio/M/Metallica/1999 - S&M/Disc 1'
 // const ROOT = "/Users/dehmer/Public/Data/audio/Mediathek/M/Metallica/1983 - Kill 'Em All"
 const EXTENSIONS = ['aac', 'aif', 'aiff', 'flac', 'm4a', 'm4v', 'mp3', 'mpc', 'ogg', 'wav', 'wma']
 // const PATTERN = `${ROOT}/**/*.{${EXTENSIONS.join(',')}}`
 const PATTERN = `${ROOT}/**/*.mp3`
-// const PATTERN = `${ROOT}/**/09 - Of Wolf And Man.mp3`
+// const PATTERN = `${ROOT}/**/1983 - Kill 'Em All/*.mp3`
+// const PATTERN = `${ROOT}/**/07 - Phantom Lord.mp3`
 
 const stat = async filehandle => {
   const { atime, mtime, ctime, size } = await filehandle.stat()
@@ -46,7 +47,22 @@ const writeImage = context => {
   } else console.log('image data', false)
 }
 
-const readmeta = async filename => {
+const calcFingerprint = async (filename, context, force) => {
+  const id3 = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
+  const fingerprintKey = id3 ? `${id3}/TXXX/Acoustid Fingerprint` : undefined
+
+  if (force || !context[fingerprintKey]) {
+    const fp = fingerprintKey ? await fpcalc(filename) : undefined
+    console.log("length", context.filename, fp && fp.duration)
+    if (fp) return { [fingerprintKey]: fp.fingerprint }
+    else {
+      console.warn('empty fingerprint')
+      return {}
+    }
+  }
+}
+
+const readmeta = async (directories, filename) => {
   console.log('[readmeta]', filename)
   const filehandle = await open(filename, 'r')
   const context = {
@@ -55,21 +71,16 @@ const readmeta = async filename => {
     ...await stat(filehandle),
   }
 
+  if (!directories[context.dirname]) directories[context.dirname] = randomUUID()
+  context.directory = directories[context.dirname]
+
   try {
     Object.assign(context, {
       ...await id3v1.read(filehandle, context),
       ...await id3v2.read(filehandle, context)
     })
 
-    const id = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
-    const fingerprintKey = id ? `${id}/TXXX/Acoustid Fingerprint` : undefined
-
-    if (!context[fingerprintKey]) {
-      const fingerprint = fingerprintKey ? await fpcalc(filename) : undefined
-      if (fingerprint) context[fingerprintKey] = fingerprint
-      else console.warn('empty fingerprint')
-    }
-    // console.log(context)
+    Object.assign(context, await calcFingerprint(filename, context, true))
   } catch (err) {
     console.error(err)
   } finally {
@@ -95,6 +106,7 @@ const storemeta = location => {
       return acc
     }, { text: [], binary: [] })
 
+    text.push({ type: 'put', key: `directory/${context.dirname}`, value: context.directory })
     await textDB.batch(text)
     await binaryDB.batch(binary)
   }
@@ -105,6 +117,7 @@ const storemeta = location => {
 }
 
 ;(async () => {
+  const directories = {}
   const filenames = await glob(PATTERN, { nodir: true })
   const store = storemeta('./db')
 
@@ -112,7 +125,7 @@ const storemeta = location => {
     .withConcurrency(10)
     .for(filenames)
     .process(async filename => {
-      const context = await readmeta(filename)
+      const context = await readmeta(directories, filename)
       const { uuid, ...rest } = context
       await store(context)
     })
