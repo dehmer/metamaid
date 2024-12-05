@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
 import { open } from 'node:fs/promises'
-import { dirname, basename, extname } from 'node:path'
+import { dirname } from 'node:path'
 import { randomUUID } from 'node:crypto'
 import * as R from 'ramda'
 import minimist from 'minimist'
@@ -11,6 +11,7 @@ import { PromisePool } from '@supercharge/promise-pool'
 import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
 import fpcalc from '../lib/chromaprint/fpcalc.js'
+import { translate } from '../lib/mappings.js'
 
 // const ROOT = '/Volumes/audiothek'
 const ROOT = '/Users/dehmer/Public/Audio/Mediathek'
@@ -23,23 +24,22 @@ const PATTERN = `${ROOT}/**/*.mp3`
 // const PATTERN = `${ROOT}/**/07 - Phantom Lord.mp3`
 
 const stat = async filehandle => {
-  const { atime, mtime, ctime, size } = await filehandle.stat()
-  return { atime, mtime, ctime, size }
+  const { atime, mtime, ctime, birthtime, size } = await filehandle.stat()
+  return { atime, mtime, ctime, birthtime, size }
 }
 
-const path = filename => ({
-  filename,
-  dirname: dirname(filename),
-  extname: extname(filename).substring(1),
-  basename: basename(filename)
-})
+// const path = filename => ({
+//   filename,
+//   dirname: dirname(filename),
+//   extname: extname(filename).substring(1),
+//   basename: basename(filename)
+// })
 
 const writeImage = context => {
   // Write first image to file
   const apic = context[`${context.id}/APIC`] || context[`${context.id}/PIC`]
   if (apic) {
     const image = apic[0]
-    console.log('image data', !!image)
     const ext = image.mimetype
       ? image.mimetype.substring(image.mimetype.indexOf('/') + 1)
       : image.format.toLowerCase()
@@ -48,13 +48,14 @@ const writeImage = context => {
 }
 
 const calcFingerprint = async (filename, context, force) => {
-  const id3 = context['ID3v2.3.0'] ? 'ID3v2.3.0' : context['ID3v2.4.0'] ? 'ID3v2.4.0' : undefined
-  const fingerprintKey = id3 ? `${id3}/TXXX/Acoustid Fingerprint` : undefined
+  const key = 'TXXX/Acoustid Fingerprint'
 
-  if (force || !context[fingerprintKey]) {
-    const fp = fingerprintKey ? await fpcalc(filename) : undefined
-    console.log("length", context.filename, fp && fp.duration)
-    if (fp) return { [fingerprintKey]: fp.fingerprint }
+  if (force || !context[key]) {
+    const fp = key ? await fpcalc(filename) : undefined
+    if (fp) return {
+      [key]: fp.fingerprint ,
+      'TXXX/Acoustid Duration': fp.duration
+    }
     else {
       console.warn('empty fingerprint')
       return {}
@@ -67,16 +68,16 @@ const readmeta = async (directories, filename) => {
   const filehandle = await open(filename, 'r')
   const context = {
     uuid: randomUUID(),
-    ...path(filename),
+    filename,
     ...await stat(filehandle),
   }
 
-  if (!directories[context.dirname]) directories[context.dirname] = randomUUID()
-  context.directory = directories[context.dirname]
+  if (!directories[dirname(filename)]) directories[dirname(filename)] = randomUUID()
+  context.directory = directories[dirname(filename)]
 
   try {
     Object.assign(context, {
-      ...await id3v1.read(filehandle, context),
+      // ...await id3v1.read(filehandle, context),
       ...await id3v2.read(filehandle, context)
     })
 
@@ -87,7 +88,7 @@ const readmeta = async (directories, filename) => {
     await filehandle.close()
   }
 
-  return context
+  return translate(context)
 }
 
 const storemeta = location => {
@@ -96,17 +97,22 @@ const storemeta = location => {
   const binaryDB = db.sublevel('binary', { valueEncoding: 'buffer' })
 
   const put = async context => {
-    const { uuid, ...rest } = context
-    const { text, binary } = Object.entries(rest).reduce((acc, [key, value]) => {
+    const fileid = context['file:id/file']
+    const filename = context['file:name']
+    const dirid = context['file:id/dir']
+
+    const { text, binary } = Object.entries(context).reduce((acc, [key, value]) => {
       if (typeof value === 'string') {
-        acc.text.push(({ type: 'put', key: `${uuid}/${key}`, value }))
+        acc.text.push(({ type: 'put', key: `${fileid}/${key}`, value }))
       } else if (value instanceof Buffer) {
-        acc.binary.push(({ type: 'put', key: `${uuid}/${key}`, value }))
+        acc.binary.push(({ type: 'put', key: `${fileid}/${key}`, value }))
       }
       return acc
     }, { text: [], binary: [] })
 
-    text.push({ type: 'put', key: `directory/${context.dirname}`, value: context.directory })
+    text.push({ type: 'put', key: `directory:${dirname(filename)}`, value: dirid })
+    text.push({ type: 'put', key: `file:${filename}`, value: fileid })
+    text.push({ type: 'put', key: `directory+file:${dirid}/${fileid}`, value: filename })
     await textDB.batch(text)
     await binaryDB.batch(binary)
   }
@@ -125,9 +131,12 @@ const storemeta = location => {
     .withConcurrency(10)
     .for(filenames)
     .process(async filename => {
-      const context = await readmeta(directories, filename)
-      const { uuid, ...rest } = context
-      await store(context)
+      try {
+        const context = await readmeta(directories, filename)
+        await store(context)
+      } catch (err) {
+        console.error(err)
+      }
     })
 
   await store.dispose()
