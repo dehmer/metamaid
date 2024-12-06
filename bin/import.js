@@ -101,20 +101,36 @@ const storemeta = location => {
     const filename = context['file:name']
     const dirid = context['file:id/dir']
 
-    const { text, binary } = Object.entries(context).reduce((acc, [key, value]) => {
-      if (typeof value === 'string') {
-        acc.text.push(({ type: 'put', key: `${fileid}/${key}`, value }))
-      } else if (value instanceof Buffer) {
-        acc.binary.push(({ type: 'put', key: `${fileid}/${key}`, value }))
-      }
+    const [binary, text] = R.partition(([k, v]) => v instanceof Buffer, Object.entries(context))
+    const tag = text.reduce((acc, [key, value]) => {
+      acc[key] = value
       return acc
-    }, { text: [], binary: [] })
+    }, {})
 
-    text.push({ type: 'put', key: `directory:${dirname(filename)}`, value: dirid })
-    text.push({ type: 'put', key: `file:${filename}`, value: fileid })
-    text.push({ type: 'put', key: `directory+file:${dirid}/${fileid}`, value: filename })
-    await textDB.batch(text)
-    await binaryDB.batch(binary)
+    const textOps = [
+      { type: 'put', key: `directory:${dirname(filename)}`, value: dirid },
+      { type: 'put', key: `file:${filename}`, value: fileid },
+      { type: 'put', key: `directory+file:${dirid}/${fileid}`, value: filename },
+      { type: 'put', key: `file+tag:${fileid}`, value: tag }
+    ]
+
+    const binaryOps = binary.map(([key, value]) => ({ type: 'put', key: `${key}/${fileid}`, value }))
+
+
+    // const { text, binary } = Object.entries(context).reduce((acc, [key, value]) => {
+    //   if (typeof value === 'string') {
+    //     acc.text.push(({ type: 'put', key: `${fileid}/${key}`, value }))
+    //   } else if (value instanceof Buffer) {
+    //     acc.binary.push(({ type: 'put', key: `${key}/${fileid}`, value }))
+    //   }
+    //   return acc
+    // }, { text: [], binary: [] })
+
+    // text.push({ type: 'put', key: `directory:${dirname(filename)}`, value: dirid })
+    // text.push({ type: 'put', key: `file:${filename}`, value: fileid })
+    // text.push({ type: 'put', key: `directory+file:${dirid}/${fileid}`, value: filename })
+    await textDB.batch(textOps)
+    await binaryDB.batch(binaryOps)
   }
 
   put.dispose = () => db.close()
