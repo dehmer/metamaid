@@ -11,7 +11,7 @@ import sharp from 'sharp'
   const binary = db.sublevel('binary', { valueEncoding: 'buffer' })
 
   const options = {
-    gte: 'frame:picture/cover/',
+    gt: 'frame:picture/cover/',
     lt: 'frame:picture/cover/\xff'
   }
 

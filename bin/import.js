@@ -4,13 +4,10 @@ import { open } from 'node:fs/promises'
 import { dirname } from 'node:path'
 import { randomUUID } from 'node:crypto'
 import * as R from 'ramda'
-import minimist from 'minimist'
 import { ClassicLevel } from 'classic-level'
 import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
 import { PromisePool } from '@supercharge/promise-pool'
-import * as id3v1 from '../lib/id3v1.js'
 import * as id3v2 from '../lib/id3v2.js'
-import fpcalc from '../lib/chromaprint/fpcalc.js'
 import { translate } from '../lib/mappings.js'
 
 // const ROOT = '/Volumes/audiothek'
@@ -47,22 +44,6 @@ const writeImage = context => {
   } else console.log('image data', false)
 }
 
-const calcFingerprint = async (filename, context, force) => {
-  const key = 'TXXX/Acoustid Fingerprint'
-
-  if (force || !context[key]) {
-    const fp = key ? await fpcalc(filename) : undefined
-    if (fp) return {
-      [key]: fp.fingerprint ,
-      'TXXX/Acoustid Duration': fp.duration
-    }
-    else {
-      console.warn('empty fingerprint')
-      return {}
-    }
-  }
-}
-
 const readmeta = async (directories, filename) => {
   console.log('[readmeta]', filename)
   const filehandle = await open(filename, 'r')
@@ -80,8 +61,6 @@ const readmeta = async (directories, filename) => {
       // ...await id3v1.read(filehandle, context),
       ...await id3v2.read(filehandle, context)
     })
-
-    Object.assign(context, await calcFingerprint(filename, context, true))
   } catch (err) {
     console.error(err)
   } finally {
@@ -111,7 +90,7 @@ const storemeta = location => {
       { type: 'put', key: `directory:${dirname(filename)}`, value: dirid },
       { type: 'put', key: `file:${filename}`, value: fileid },
       { type: 'put', key: `directory+file:${dirid}/${fileid}`, value: filename },
-      { type: 'put', key: `file+tag:${fileid}`, value: tag }
+      { type: 'put', key: `file+tag:${dirid}/${fileid}`, value: tag }
     ]
 
     const binaryOps = binary.map(([key, value]) => ({ type: 'put', key: `${key}/${fileid}`, value }))
